@@ -1,14 +1,21 @@
-class Solution {
-public:
-    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-        vector<int> result(nums.size());
-        for (int i = 0; i < nums.size(); i++) {
-            int count = 0;
-            for (int j = 0; j < nums.size(); j++) {
-                if (nums[j] < nums[i]) count++;
-            }
-            result[i] = count;
+#include <iostream>
+using namespace std;
+
+int main() {
+    int nums[] = {8, 1, 2, 2, 3};
+    int size = sizeof(nums) / sizeof(nums[0]);
+    int result[100];
+
+    for (int i = 0; i < size; i++) {
+        int count = 0;
+        for (int j = 0; j < size; j++) {
+            if (nums[j] < nums[i]) count++;
         }
-        return result;
+        result[i] = count;
     }
-};
+
+    for (int i = 0; i < size; i++) {
+        cout << result[i] << " ";
+    }
+}
+
